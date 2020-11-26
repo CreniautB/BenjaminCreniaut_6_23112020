@@ -1,9 +1,127 @@
-#listPhotographers li a {
-  height: 100%;
+* {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
 }
 
-#listPhotographers li a img {
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  height: 150px;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header a h1 {
+  font-size: 38px;
+  color: #901C1C;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+}
+
+header a h1 svg {
+  margin-right: 0.1em;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 30px;
+}
+
+header ul li {
+  font-size: 11px;
+  height: 22px;
+  padding: 0.3em;
+  margin: 0.5em;
+  color: #901C1C;
+  font-weight: 900;
+  border: 0.5px solid #C4C4C4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 11px;
+}
+
+header h1 {
+  color: #901C1C;
+  font-size: 36px;
+}
+
+#card {
+  display: none;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main section {
+  width: 33%;
+  margin: auto;
+  text-align: center;
+  margin-top: 1em;
+}
+
+main section a {
+  text-decoration: none;
+}
+
+main section a div {
   width: 200px;
+  height: 200px;
+  overflow: hidden;
   border-radius: 50%;
+  margin: auto;
+}
+
+main section a div img {
+  height: 120%;
+  position: relative;
+  right: 10%;
+}
+
+main section a h2 {
+  color: #D3573C;
+  font-size: 36px;
+  margin: 0;
+  margin-top: 0.5em;
+}
+
+main section h3 {
+  color: #901C1C;
+  font-size: 13px;
+  margin: 0;
+}
+
+main section p {
+  font-size: 10px;
+  margin: 0.5em;
+}
+
+main section small {
+  font-size: 9px;
+  color: #757575;
+}
+
+main section ul li {
+  list-style: none;
 }
 /*# sourceMappingURL=syle.css.map */
