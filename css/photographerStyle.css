@@ -1,0 +1,14 @@
+#photographerPortrait {
+  width: 200px;
+}
+
+#photoGallery {
+  width: 200px;
+}
+
+#gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=photographerStyle.css.map */
