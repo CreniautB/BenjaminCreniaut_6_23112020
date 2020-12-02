@@ -10,42 +10,45 @@ fetch('jsonSource.json')
         var model = document.querySelector("#card");
 
         data["photographers"].forEach(element => {
-            
-            document.querySelector("#card a h2").innerHTML = element["name"];
-            document.querySelector("#card a div img").src = "Photos/PhotographersPhotos/" + element['portrait'];
-            document.querySelector("#card h3").innerHTML = element["country"] +", " + element["city"];
-            document.querySelector("#card p").innerHTML = element["tagline"];
-            document.querySelector("#card small").innerHTML = element["price"] + "€/Jour";
-
-            
-            for ( let i = 0; i < element["tags"].length; i++) {
-              
-                console.log(element.tags[i])
-
-                var tags = document.createElement("LI");
-                tags.innerHTML = element.tags[i];
-
-                console.log(tags)
-               
-                document.querySelector("#card ul").appendChild(tags);
-
-            }; 
-
-
+           
             var clone = model.cloneNode(true);
                         
             clone.id = element["id"];
                        
             document.querySelector("main").appendChild(clone);
-                
+
+
+            clone.querySelector(".name").innerHTML = element["name"];
+            clone.querySelector(".portrait").src = "Photos/PhotographersPhotos/" + element['portrait'];
+            clone.querySelector(".location").innerHTML = element["country"] +", " + element["city"];
+            clone.querySelector(".tagLine").innerHTML = element["tagline"];
+            clone.querySelector(".price").innerHTML = element["price"] + "€/Jour";
+
+
+            for ( let i = 0; i < element["tags"].length; i++) {
+            
+                var tags = document.createElement("LI");
+                tags.innerHTML = element.tags[i];               
+                clone.querySelector(".tagList").appendChild(tags);
+
+            };   
+
+           clone.querySelector("a").addEventListener("click", function(e) {
+
+                let urlData = new URL('http://127.0.0.1:5500/photographers.html');
+             
+                urlData.search = clone.id
+
+                console.log(urlData)
+
+                console.log(clone.id+"lol")
+
+               window.location = urlData;
+
+           }   )
         },
-
-
-    )})
-
+    )
+    })
     
 
-    function getId(id) {
-        document.cookie= "id="+id; 
-    };
 

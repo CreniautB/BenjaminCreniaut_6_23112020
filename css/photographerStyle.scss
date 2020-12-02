@@ -1,14 +1,28 @@
 
-#photographerPortrait
+.photographerPortrait
 {
     width: 200px;
 }
 
-#photoGallery{
-    width: 200px;
-}
 
-#gallery
+.gallery
 {
-    display: flex
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#model
+{
+    display: none
+}
+.photoContainer
+{
+    width: 25%;
+    margin: 2em;
+
+
+    img, video 
+    {
+        width: 100%;
+    }
 }

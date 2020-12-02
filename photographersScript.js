@@ -1,25 +1,4 @@
 
-function getCookie(id){
-    if(document.cookie.length == 0)
-      return null;
-
-    var regSepCookie = new RegExp('(; )', 'g');
-    var cookies = document.cookie.split(regSepCookie);
-
-    for(var i = 0; i < cookies.length; i++){
-      var regInfo = new RegExp('=', 'g');
-      var infos = cookies[i].split(regInfo);
-      if(infos[0] == id){
-        return unescape(infos[1]);
-      }
-    }
-    return null;
-  }
-
-  var photographersId = getCookie('id')
-
-
-
 fetch('jsonSource.json')
     .then((response) => {
         return response.json()
@@ -27,16 +6,20 @@ fetch('jsonSource.json')
 
     .then ((data) => {
 
+      longID = window.location.search
+
+      photographersId = longID.substr(1);
+
       let photographersByID = data["photographers"].filter(function (e) {
         return e.id == photographersId;
       });
       
       console.log(photographersByID);
 
-      document.querySelector("#photographerName").innerHTML = photographersByID[0].name;
-      document.querySelector("#photographerLocation").innerHTML = photographersByID[0].city + photographersByID[0].country;
-      document.querySelector("#photographerTagLine").innerHTML = photographersByID[0].tagline;
-      document.querySelector("#photographerPortrait").src = "Photos/PhotographersPhotos/" + photographersByID[0].portrait;
+      document.querySelector(".photographerName").innerHTML = photographersByID[0].name;
+      document.querySelector(".photographerLocation").innerHTML = photographersByID[0].city + photographersByID[0].country;
+      document.querySelector(".photographerTagLine").innerHTML = photographersByID[0].tagline;
+      document.querySelector(".photographerPortrait").src = "Photos/PhotographersPhotos/" + photographersByID[0].portrait;
   
 
       let mediaPhoto = data["media"].filter(function (e) { 
@@ -46,19 +29,35 @@ fetch('jsonSource.json')
 
       console.log(mediaPhoto);
 
-      var model = document.querySelector("#galleryCard");
+      var model = document.querySelector(".photoContainer");
 
       mediaPhoto.forEach(element => {
 
-        image = document.querySelector("#galleryCard");
-        image = document.createElement("IMG");
-        document.querySelector("#galleryCard img").src = "Photos/"+element.photographerId+"/"+element.image;
+          var clone = model.cloneNode(true);
+
+          document.querySelector(".gallery").appendChild(clone);
+
+          clone.id = element["id"]
     
-        var clone = model.cloneNode(true);
+          console.log(element.video)
 
-        document.querySelector("#gallery").appendChild(clone);
-
-
+          if ( element.image === undefined )
+          {
+            let video = document.createElement("VIDEO");
+            let videoSource = document.createElement("SOURCE");
+            videoSource.src = "Photos/"+element.photographerId+"/"+element.video;
+            video.setAttribute("autoplay", "true")
+            clone.appendChild(video)
+            video.appendChild(videoSource)
+          }
+          
+          else 
+          {
+            let image = document.createElement("IMG");
+            image.src = "Photos/"+element.photographerId+"/"+element.image;
+            clone.appendChild(image)
+          }
+     
       },
   )
 })
