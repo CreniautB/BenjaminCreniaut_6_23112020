@@ -1,7 +1,162 @@
+$orange : #D3573C;
+$darkOrange : #901C1C;
+$grey : #757575;
 
-.photographerPortrait
+html, body
 {
-    width: 200px;
+    overflow-x: hidden;
+}
+
+#model
+{
+    display: none
+}
+
+body 
+{
+    margin: 3em;
+}
+
+header
+{
+    width: 100%;
+    margin-left: 1.5em;
+}
+.photographerCard
+{
+    margin-bottom: 2em!important;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    background: #FAFAFA;
+    padding: 1.5em;
+    
+    #photographerPortraitContainer 
+    {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+        
+    
+        img 
+        {
+            height: 120%;
+            position: relative;
+            right: 10%;
+            
+        }
+    }
+}
+
+.photographerNameContact
+{
+    display: flex;
+    justify-content: space-between;
+
+    .photographerName
+    {
+        font-size: 64px;
+        color: $orange;
+        margin: 0;
+    }
+    button 
+    {
+        background-color: #901C1C;
+        font-weight: 700;
+        font-size: 20px;
+        color: white;
+        border-radius: 5px;
+        border: 0px;
+        margin-left: 100px;
+        padding: 17px;
+        height: 70px;
+    }
+}
+.photographerLocation
+{
+    font-size: 24px;
+    color: $darkOrange;
+}
+.photographerTagLine
+{
+    font-size: 18px;
+}
+.tagList
+{
+    padding: 0;            
+    display: flex;
+    width: 100%;
+    margin: auto;
+    li
+    {
+        list-style: none;
+        color: $darkOrange;
+        border: 0.5px solid #C4C4C4;
+        box-sizing: border-box;
+        border-radius: 11px;
+        padding: 4px;
+        margin: 3px;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+
+.photoContainer
+{
+    margin: 1em;
+    width: 350px;
+    
+    .media 
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+        width: 350px;
+        overflow: hidden;
+        border-radius : 5px;
+    }
+
+    img, video 
+    {
+       min-height: 100%;
+       max-width: 100%;
+    }
+
+    .subMedia
+    {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5em;
+        *
+        {
+            color: $darkOrange;
+            font-size: 19px;
+        }
+        .titlePhotoContainer
+        {
+            max-width: 60%;
+        }
+        h3
+        {
+            margin: 0;
+        }
+        .likePriceMedia
+        {
+            display: flex;
+            flex-wrap: nowrap;
+            *
+            {
+            padding-left: 5px;
+            }
+        }
+
+    }
+
 }
 
 
@@ -11,18 +166,61 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-#model
-{
-    display: none
-}
-.photoContainer
-{
-    width: 25%;
-    margin: 2em;
 
 
-    img, video 
+@media screen and (max-width : 1000px)
+{
+    #btnContact
     {
-        width: 100%;
+        display: none;
     }
+    .media, .photoContainer
+    {
+        width: 300px!important;
+        margin: auto;
+    }
+}
+@media screen and ( max-width : 650px)
+{
+    body 
+    {
+        margin: 0;
+    }
+    .photographerCard
+    {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .tagList
+    {
+        justify-content: space-between;
+    }
+    .photographerNameContact
+    {
+        h1 
+        {
+            width: 100%;
+        }
+    }
+    #photographerPortraitContainer
+    {
+        margin: auto;
+        margin-top: 1em;
+    }
+
+
+    .media, .photoContainer
+    {
+        width: 300px!important;
+        margin: auto;
+    }
+    .media
+    {
+        height: 200px!important;
+        margin-top: 1em;
+    }
+
 }

@@ -3,8 +3,6 @@ fetch('jsonSource.json')
         return response.json()
     })
 
-    
-
     .then ((data) => {
       
         var model = document.querySelector("#card");
@@ -19,7 +17,7 @@ fetch('jsonSource.json')
 
 
             clone.querySelector(".name").innerHTML = element["name"];
-            clone.querySelector(".portrait").src = "Photos/PhotographersPhotos/" + element['portrait'];
+            clone.querySelector(".portrait").src = "../Photos/PhotographersPhotos/" + element['portrait'];
             clone.querySelector(".location").innerHTML = element["country"] +", " + element["city"];
             clone.querySelector(".tagLine").innerHTML = element["tagline"];
             clone.querySelector(".price").innerHTML = element["price"] + "€/Jour";
@@ -28,7 +26,7 @@ fetch('jsonSource.json')
             for ( let i = 0; i < element["tags"].length; i++) {
             
                 var tags = document.createElement("LI");
-                tags.innerHTML = element.tags[i];               
+                tags.innerHTML = "# "+element.tags[i];               
                 clone.querySelector(".tagList").appendChild(tags);
 
             };   

@@ -25,7 +25,7 @@ header
      
         h1 
         {
-            font-size: 38px;
+            font-size: 45px;
             color: $darkOrange;
             letter-spacing: 0.1em;
             font-weight: 800;
@@ -131,9 +131,25 @@ main
         }
         ul
         {
+            padding: 0;            
+            display: flex;
+            width: 100%;
+            margin: auto;
+            justify-content: space-evenly;
+
             li
             {
                 list-style: none;
+                color: $darkOrange;
+                border: 0.5px solid #C4C4C4;
+                box-sizing: border-box;
+                border-radius: 11px;
+                padding: 4px;
+                margin: 3px;
+                font-size: 12px;
+                line-height: 16px;
+                text-align: center;
+                font-weight: bold;
             }
         }
     }

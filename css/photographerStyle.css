@@ -1,5 +1,165 @@
-.photographerPortrait {
+html, body {
+  overflow-x: hidden;
+}
+
+#model {
+  display: none;
+}
+
+body {
+  margin: 3em;
+}
+
+header {
+  width: 100%;
+  margin-left: 1.5em;
+}
+
+.photographerCard {
+  margin-bottom: 2em !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  background: #FAFAFA;
+  padding: 1.5em;
+}
+
+.photographerCard #photographerPortraitContainer {
   width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.photographerCard #photographerPortraitContainer img {
+  height: 120%;
+  position: relative;
+  right: 10%;
+}
+
+.photographerNameContact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.photographerNameContact .photographerName {
+  font-size: 64px;
+  color: #D3573C;
+  margin: 0;
+}
+
+.photographerNameContact button {
+  background-color: #901C1C;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+  border-radius: 5px;
+  border: 0px;
+  margin-left: 100px;
+  padding: 17px;
+  height: 70px;
+}
+
+.photographerLocation {
+  font-size: 24px;
+  color: #901C1C;
+}
+
+.photographerTagLine {
+  font-size: 18px;
+}
+
+.tagList {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+
+.tagList li {
+  list-style: none;
+  color: #901C1C;
+  border: 0.5px solid #C4C4C4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 11px;
+  padding: 4px;
+  margin: 3px;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.photoContainer {
+  margin: 1em;
+  width: 350px;
+}
+
+.photoContainer .media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 300px;
+  width: 350px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.photoContainer img, .photoContainer video {
+  min-height: 100%;
+  max-width: 100%;
+}
+
+.photoContainer .subMedia {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 0.5em;
+}
+
+.photoContainer .subMedia * {
+  color: #901C1C;
+  font-size: 19px;
+}
+
+.photoContainer .subMedia .titlePhotoContainer {
+  max-width: 60%;
+}
+
+.photoContainer .subMedia h3 {
+  margin: 0;
+}
+
+.photoContainer .subMedia .likePriceMedia {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.photoContainer .subMedia .likePriceMedia * {
+  padding-left: 5px;
 }
 
 .gallery {
@@ -13,16 +173,49 @@
           justify-content: space-between;
 }
 
-#model {
-  display: none;
+@media screen and (max-width: 1000px) {
+  #btnContact {
+    display: none;
+  }
+  .media, .photoContainer {
+    width: 300px !important;
+    margin: auto;
+  }
 }
 
-.photoContainer {
-  width: 25%;
-  margin: 2em;
-}
-
-.photoContainer img, .photoContainer video {
-  width: 100%;
+@media screen and (max-width: 650px) {
+  body {
+    margin: 0;
+  }
+  .photographerCard {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .tagList {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .photographerNameContact h1 {
+    width: 100%;
+  }
+  #photographerPortraitContainer {
+    margin: auto;
+    margin-top: 1em;
+  }
+  .media, .photoContainer {
+    width: 300px !important;
+    margin: auto;
+  }
+  .media {
+    height: 200px !important;
+    margin-top: 1em;
+  }
 }
 /*# sourceMappingURL=photographerStyle.css.map */
