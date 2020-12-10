@@ -128,9 +128,9 @@ main section ul {
   display: flex;
   width: 100%;
   margin: auto;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 main section ul li {

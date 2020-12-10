@@ -31,19 +31,9 @@ fetch('jsonSource.json')
 
             };   
 
-           clone.querySelector("a").addEventListener("click", function(e) {
-
-                let urlData = new URL('http://127.0.0.1:5500/photographers.html');
+            let urlData = 'photographers.html?'+"id="+clone.id
              
-                urlData.search = clone.id
-
-                console.log(urlData)
-
-                console.log(clone.id+"lol")
-
-               window.location = urlData;
-
-           }   )
+            clone.querySelector("a").href = urlData
         },
     )
     })

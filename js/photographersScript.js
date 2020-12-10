@@ -8,7 +8,7 @@ fetch('jsonSource.json')
 
       longID = window.location.search
 
-      photographersId = longID.substr(1);
+      photographersId = longID.substr(4);
 
       let photographersByID = data["photographers"].filter(function (e) {
         return e.id == photographersId;
@@ -92,7 +92,6 @@ fetch('jsonSource.json')
    
       
   )
-  console.log("test2")
 
   var js = document.createElement("script");
   js.src = "js/lightBox.js";
