@@ -19,7 +19,7 @@ fetch('jsonSource.json')
       document.querySelector(".photographerName").innerHTML = photographersByID[0].name;
       document.querySelector(".photographerLocation").innerHTML = photographersByID[0].city + photographersByID[0].country;
       document.querySelector(".photographerTagLine").innerHTML = photographersByID[0].tagline;
-      document.querySelector(".photographerPortrait").src = "../Photos/PhotographersPhotos/" + photographersByID[0].portrait;
+      document.querySelector(".photographerPortrait").src = "Photos/PhotographersPhotos/" + photographersByID[0].portrait;
   
       for ( let i = 0; i < photographersByID[0]["tags"].length; i++) {
             
@@ -73,7 +73,7 @@ fetch('jsonSource.json')
             video.setAttribute("autoplay", "true")
             clone.querySelector(".media").appendChild(video)
             video.appendChild(videoSource)
-            clone.querySelector(".media").href = "../Photos/"+element.photographerId+"/"+element.video;
+            clone.querySelector(".media").href = "Photos/"+element.photographerId+"/"+element.video;
 
           }
           else 
@@ -81,7 +81,7 @@ fetch('jsonSource.json')
             let image = document.createElement("IMG");
             image.src = "../Photos/"+element.photographerId+"/"+element.image;
             clone.querySelector(".media").appendChild(image)
-            clone.querySelector(".media").href = "../Photos/"+element.photographerId+"/"+element.image;
+            clone.querySelector(".media").href = "Photos/"+element.photographerId+"/"+element.image;
           
 
           }
