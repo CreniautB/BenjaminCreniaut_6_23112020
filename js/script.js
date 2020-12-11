@@ -28,15 +28,21 @@ fetch('jsonSource.json')
                 var tags = document.createElement("LI");
                 tags.innerHTML = "# "+element.tags[i];               
                 clone.querySelector(".tagList").appendChild(tags);
+                clone.classList.add(element.tags[i])
+
 
             };   
 
             let urlData = 'photographers.html?'+"id="+clone.id
              
             clone.querySelector("a").href = urlData
+
+            
         },
     )
     })
     
+var js = document.createElement("script");
+js.src = "js/tagMenu.js";
 
-
+document.body.appendChild(js);
