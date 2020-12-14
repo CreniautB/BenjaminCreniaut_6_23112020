@@ -1,0 +1,62 @@
+.bgform {
+  display: none;
+}
+
+.bgform {
+  padding: 2em;
+  position: absolute;
+  width: 30%;
+  left: 45%;
+  margin-left: -15%;
+  top: 50px;
+  min-height: 60%;
+  background-color: #DB8876;
+  z-index: 1500;
+  border-radius: 5px;
+}
+
+.bgform #titleCloseForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.bgform #titleCloseForm #closeForm {
+  margin-top: 2em;
+}
+
+.bgform h1 {
+  font-size: 64px;
+}
+
+.bgform .formData, .bgform h1 {
+  width: 100%;
+  margin: auto;
+}
+
+.bgform .formData label, .bgform h1 label {
+  font-size: 36px;
+}
+
+.bgform .formData input, .bgform h1 input {
+  width: 100%;
+  height: 80px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 25px;
+  padding: 0.5em;
+}
+
+.bgform #submitBtn {
+  background-color: #911C1C;
+  border-radius: 5px;
+  padding: 1em;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 2em;
+}
+/*# sourceMappingURL=form.css.map */

@@ -20,6 +20,7 @@ fetch('jsonSource.json')
       document.querySelector(".photographerLocation").innerHTML = photographersByID[0].city + photographersByID[0].country;
       document.querySelector(".photographerTagLine").innerHTML = photographersByID[0].tagline;
       document.querySelector(".photographerPortrait").src = "Photos/PhotographersPhotos/" + photographersByID[0].portrait;
+      document.querySelector(".nameForm").innerHTML = photographersByID[0].name;
   
       for ( let i = 0; i < photographersByID[0]["tags"].length; i++) {
             
@@ -33,9 +34,6 @@ fetch('jsonSource.json')
          return e.photographerId == photographersId;
       });
 
-
-      console.log(mediaPhoto);
-
       var model = document.querySelector(".photoContainer");
 
       mediaPhoto.forEach(element => {
@@ -47,6 +45,7 @@ fetch('jsonSource.json')
           clone.querySelector(".pricePhoto").innerHTML = element["price"]+" €"
           clone.querySelector(".titlePhoto").innerHTML = element["image"]
           clone.querySelector(".likeNb").innerHTML = element["likes"]
+
         
           if ( element.video === undefined)
             {           
@@ -82,8 +81,7 @@ fetch('jsonSource.json')
             image.src = "../Photos/"+element.photographerId+"/"+element.image;
             clone.querySelector(".media").appendChild(image)
             clone.querySelector(".media").href = "Photos/"+element.photographerId+"/"+element.image;
-          
-
+      
           }
 
      
@@ -93,13 +91,19 @@ fetch('jsonSource.json')
       
   )
 
-  var js = document.createElement("script");
-  js.src = "js/lightBox.js";
 
-  document.body.appendChild(js);
+
+
+  var jslightBox = document.createElement("script");
+  var jscontact = document.createElement("script");
+  
+  jslightBox.src = "js/lightBox.js";
+  jscontact.src = "js/contact.js";
+  
+  document.body.appendChild(jscontact);
+  document.body.appendChild(jslightBox);
 
 
 
 })
-
 
