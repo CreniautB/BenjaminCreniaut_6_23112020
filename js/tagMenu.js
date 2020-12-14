@@ -8,13 +8,14 @@ tagLi.forEach(tag => {
         const section = document.querySelectorAll("section")
         const classTag = tag.classList[0]
 
+        
         section.forEach(photographer => {
             if ( photographer.classList.contains(classTag) == true ){
-                photographer.style.display = "block"
+                photographer.style.display = "block";
             }
             else 
             {
-                photographer.style.display = "none"
+                photographer.style.display = "none";
             }
         })
     })

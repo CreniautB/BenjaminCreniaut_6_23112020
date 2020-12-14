@@ -46,6 +46,23 @@ fetch('jsonSource.json')
           clone.querySelector(".titlePhoto").innerHTML = element["image"]
           clone.querySelector(".likeNb").innerHTML = element["likes"]
 
+          var like = new Boolean
+          like = false
+          
+          clone.querySelector(".likeHeart").addEventListener("click", function(e){
+
+            if (like == false)
+            {
+              like = true
+              clone.querySelector(".likeNb").innerHTML = element["likes"]+1
+            }
+            else
+            {
+              like = false
+              clone.querySelector(".likeNb").innerHTML = element["likes"]
+            }
+
+          })
         
           if ( element.video === undefined)
             {           
