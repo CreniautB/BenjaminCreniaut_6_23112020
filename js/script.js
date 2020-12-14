@@ -17,7 +17,7 @@ fetch('jsonSource.json')
 
 
             clone.querySelector(".name").innerHTML = element["name"];
-            clone.querySelector(".portrait").src = "../Photos/PhotographersPhotos/" + element['portrait'];
+            clone.querySelector(".portrait").src = "Photos/PhotographersPhotos/" + element['portrait'];
             clone.querySelector(".location").innerHTML = element["country"] +", " + element["city"];
             clone.querySelector(".tagLine").innerHTML = element["tagline"];
             clone.querySelector(".price").innerHTML = element["price"] + "€/Jour";

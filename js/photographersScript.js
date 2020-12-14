@@ -85,7 +85,7 @@ fetch('jsonSource.json')
           {
             let video = document.createElement("VIDEO");
             let videoSource = document.createElement("SOURCE");
-            videoSource.src = "../Photos/"+element.photographerId+"/"+element.video;
+            videoSource.src = "Photos/"+element.photographerId+"/"+element.video;
             video.setAttribute("autoplay", "true")
             clone.querySelector(".media").appendChild(video)
             video.appendChild(videoSource)
@@ -95,7 +95,7 @@ fetch('jsonSource.json')
           else 
           {
             let image = document.createElement("IMG");
-            image.src = "../Photos/"+element.photographerId+"/"+element.image;
+            image.src = "Photos/"+element.photographerId+"/"+element.image;
             clone.querySelector(".media").appendChild(image)
             clone.querySelector(".media").href = "Photos/"+element.photographerId+"/"+element.image;
       
