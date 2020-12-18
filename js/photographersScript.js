@@ -6,18 +6,16 @@ fetch('jsonSource.json')
 
     .then ((data) => {
 
+      /** Récupération Id et Proil Photographe */
+
       longID = window.location.search
-
       photographersId = longID.substr(4);
-
       let photographersByID = data["photographers"].filter(function (e) {
         return e.id == photographersId;
       });
-      
-      console.log(photographersByID);
 
       document.querySelector(".photographerName").innerHTML = photographersByID[0].name;
-      document.querySelector(".photographerLocation").innerHTML = photographersByID[0].city + photographersByID[0].country;
+      document.querySelector(".photographerLocation").innerHTML = photographersByID[0].city+", " + photographersByID[0].country;
       document.querySelector(".photographerTagLine").innerHTML = photographersByID[0].tagline;
       document.querySelector(".photographerPortrait").src = "Photos/PhotographersPhotos/" + photographersByID[0].portrait;
       document.querySelector(".nameForm").innerHTML = photographersByID[0].name;
@@ -34,8 +32,10 @@ fetch('jsonSource.json')
          return e.photographerId == photographersId;
       });
 
-      var model = document.querySelector(".photoContainer");
 
+
+      /** Gallery Photos */
+      var model = document.querySelector(".photoContainer");
       mediaPhoto.forEach(element => {
 
           var clone = model.cloneNode(true);
@@ -46,24 +46,21 @@ fetch('jsonSource.json')
           clone.querySelector(".titlePhoto").innerHTML = element["image"]
           clone.querySelector(".likeNb").innerHTML = element["likes"]
 
+          /** Incrémentation Likes */
+
           var like = new Boolean
           like = false
-          
           clone.querySelector(".likeHeart").addEventListener("click", function(e){
-
-            if (like == false)
-            {
+            if (like == false){
               like = true
-              clone.querySelector(".likeNb").innerHTML = element["likes"]+1
-            }
-            else
-            {
+              clone.querySelector(".likeNb").innerHTML = element["likes"]+1}
+            else {
               like = false
-              clone.querySelector(".likeNb").innerHTML = element["likes"]
-            }
-
-          })
+              clone.querySelector(".likeNb").innerHTML = element["likes"]}})
         
+
+          /** Vérifiacation media Si photos Ou Video et ajout à la gallery */
+            
           if ( element.video === undefined)
             {           
               preTitle = element.image 
@@ -98,18 +95,13 @@ fetch('jsonSource.json')
             image.src = "Photos/"+element.photographerId+"/"+element.image;
             clone.querySelector(".media").appendChild(image)
             clone.querySelector(".media").href = "Photos/"+element.photographerId+"/"+element.image;
-      
           }
-
-     
       },
-
-   
-      
   )
 
 
 
+  /** Appel des fichiers javascript */
 
   var jslightBox = document.createElement("script");
   var jscontact = document.createElement("script");

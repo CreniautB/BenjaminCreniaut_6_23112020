@@ -21,7 +21,7 @@ fetch('jsonSource.json')
             clone.querySelector(".location").innerHTML = element["country"] +", " + element["city"];
             clone.querySelector(".tagLine").innerHTML = element["tagline"];
             clone.querySelector(".price").innerHTML = element["price"] + "€/Jour";
-
+            clone.classList.add("clone")
 
             for ( let i = 0; i < element["tags"].length; i++) {
             
@@ -29,8 +29,6 @@ fetch('jsonSource.json')
                 tags.innerHTML = "# "+element.tags[i];               
                 clone.querySelector(".tagList").appendChild(tags);
                 clone.classList.add(element.tags[i])
-
-
             };   
 
             let urlData = 'photographers.html?'+"id="+clone.id
