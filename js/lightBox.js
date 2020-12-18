@@ -22,7 +22,7 @@ class Lightbox {
   constructor(url, images) {
     this.element = this.buildDOM(url)
     this.images = images
-    this.loadImage(url)
+    this.displayImage(url)
     this.onKeyUp = this.onKeyUp.bind(this)
     document.body.appendChild(this.element)
     document.addEventListener('keyup', this.onKeyUp)
@@ -31,21 +31,35 @@ class Lightbox {
   /**
    * @param {string} url URL de l'image
    */
-  loadImage (url) {
+
+  displayImage (url) {
+    
     this.url = null
     const image = new Image()
     const container = this.element.querySelector('.lightbox__container')
-    const loader = document.createElement('div')
-    loader.classList.add('lightbox__loader')
-    container.innerHTML = ''
-    container.appendChild(loader)
-    image.onload = () => {
-      container.removeChild(loader)
+
+
+    if ( url.substr(-4) == ".mp4" )
+    {
+      container.innerHTML = ""
+      const video = document.createElement("video")
+      const source = document.createElement("source")
+      container.appendChild(video)
+      video.appendChild(source)
+      video.setAttribute("controls", "true")
+      this.url = url
+      source.src = url
+      
+    }
+    else {        
+      container.innerHTML = ""
       container.appendChild(image)
       this.url = url
-    }
-    image.src = url
+      image.src = url
+    } 
   }
+
+
 
   /**
    * @param {KeyboardEvent} e 
@@ -59,7 +73,6 @@ class Lightbox {
       this.next(e)
     }
   }
-
   /**
    * Ferme la ligthbox
    * @param {MouseEvent|KeyboardEvent} e 
@@ -82,7 +95,7 @@ class Lightbox {
     if (i === this.images.length - 1) {
       i = -1
     }
-    this.loadImage(this.images[i + 1])
+    this.displayImage(this.images[i + 1])
   }
 
   /**
@@ -94,7 +107,7 @@ class Lightbox {
     if (i === 0) {
       i = this.images.length
     }
-    this.loadImage(this.images[i - 1])
+    this.displayImage(this.images[i - 1])
   }
 
   /**

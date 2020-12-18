@@ -1,5 +1,3 @@
-console.log("last")
-
 var btn = document.querySelector("#btnContact")
 
 btn.addEventListener("click", function(e)

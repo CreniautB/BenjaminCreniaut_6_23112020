@@ -22,7 +22,6 @@ tagLi.forEach(tag => {
                 }
             })
             bool = true
-            console.log(bool)
         }
 
         else {
@@ -30,7 +29,6 @@ tagLi.forEach(tag => {
                 photographer.style.display = "block";
             })
             bool = false
-            console.log(bool)
         }
 
     })
