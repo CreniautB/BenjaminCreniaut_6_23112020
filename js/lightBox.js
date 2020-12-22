@@ -59,8 +59,6 @@ class Lightbox {
     } 
   }
 
-
-
   /**
    * @param {KeyboardEvent} e 
    */

@@ -21,13 +21,10 @@ fetch('jsonSource.json')
       document.querySelector(".nameForm").innerHTML = photographersByID[0].name;
   
       for ( let i = 0; i < photographersByID[0]["tags"].length; i++) {
-            
         var tags = document.createElement("LI");
         tags.innerHTML = "# "+photographersByID[0].tags[i];               
         document.querySelector(".tagList").appendChild(tags);
-
       };
-
       let mediaPhoto = data["media"].filter(function (e) { 
          return e.photographerId == photographersId;
       });
@@ -45,6 +42,9 @@ fetch('jsonSource.json')
           clone.querySelector(".pricePhoto").innerHTML = element["price"]+" €"
           clone.querySelector(".titlePhoto").innerHTML = element["image"]
           clone.querySelector(".likeNb").innerHTML = element["likes"]
+          clone.dataset.like = element["likes"]
+          clone.dataset.title = element["image"]
+          clone.dataset.date = element["date"]
 
           /** Incrémentation Likes */
 
@@ -59,6 +59,7 @@ fetch('jsonSource.json')
               clone.querySelector(".likeNb").innerHTML = element["likes"]}})
         
 
+
           /** Vérifiacation media Si photos Ou Video et ajout à la gallery */
             
           if ( element.video === undefined)
@@ -68,6 +69,7 @@ fetch('jsonSource.json')
               title = replaced.split('_').join(' ');
               document.querySelector(".titlePhoto").innerHTML = title
               clone.querySelector(".titlePhoto").innerHTML = title
+
             }
             
           else {
@@ -76,6 +78,7 @@ fetch('jsonSource.json')
               replaced =  preTitle.substring(0, preTitle.length - 4); 
               title = replaced.split('_').join(' ');         
               clone.querySelector(".titlePhoto").innerHTML = title
+              clone.dataset.title = element["video"]
           }
          
           if ( element.image === undefined )
@@ -105,10 +108,13 @@ fetch('jsonSource.json')
 
   var jslightBox = document.createElement("script");
   var jscontact = document.createElement("script");
+  var jsfilter = document.createElement("script")
   
   jslightBox.src = "js/lightBox.js";
   jscontact.src = "js/contact.js";
-  
+  jsfilter.src = "js/filter.js";
+
+  document.body.appendChild(jsfilter);
   document.body.appendChild(jscontact);
   document.body.appendChild(jslightBox);
 
