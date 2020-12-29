@@ -1,3 +1,15 @@
+btn = document.querySelector('#filterMenu');
+
+btn.addEventListener('click', function(e){
+
+    btnF = document.querySelectorAll(".hideBtn")
+    btnF.forEach(element => {
+        element.style.display = "block";
+    }
+)});
+
+
+
 article = document.querySelectorAll('.photoContainer')
 
 array = []

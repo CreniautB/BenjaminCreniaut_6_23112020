@@ -1,4 +1,4 @@
-<html lang="en">
+<html xml:lang="fr" lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,13 +23,13 @@
             </h1>
         </a>
     </header>
-
+    
+    
     <section class="photographerCard">
 
         <div>
             <div class="photographerNameContact"><h1 class="photographerName"></h1><button id="btnContact">Contactez-moi</button></div>
             
-
             <h2 class="photographerLocation"></h2>
 
             <p class="photographerTagLine"></p>
@@ -46,19 +46,14 @@
         
     </section>
     
-    <section>
+    <section id="filtre">
         <h2>Trier Par </h2>
-        <ul>
-            <li><button type="button" id="popFilter">
-                    Popularité
-                </button>
+        <ul id="listFilter">
+            <li class="btnFilter ">
+                <span id="popFilter">Popularité</span><span id="filterMenu"><i class="fas fa-arrow-down"></i></span>
             </li>
-            <li><button type="button" id="dateFilter">
-                    Date
-                </button></li>
-            <li><button type="button" id="titleFilter">
-                    Titre
-                </button></li>
+            <li id="dateFilter" class="hideBtn btnFilter">Date</li>
+            <li id="titleFilter" class="hideBtn btnFilter">Titre</li>
         </ul>
     </section>
 
@@ -79,6 +74,8 @@
         </article>
     
     </section>
+
+
 
     <div class="bgform">
         <div id="titleCloseForm">

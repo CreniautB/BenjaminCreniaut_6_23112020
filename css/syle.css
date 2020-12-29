@@ -129,6 +129,7 @@ main section ul {
   display: flex;
   width: 100%;
   margin: auto;
+  margin-top: 0.3em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -147,5 +148,53 @@ main section ul li {
   line-height: 16px;
   text-align: center;
   font-weight: bold;
+}
+
+@media screen and (max-width: 1050px) {
+  main section {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  header #titlePhotoHeader {
+    font-size: 14px;
+    position: absolute;
+    right: 1.3em;
+    top: 1.3em;
+  }
+  header a h1 {
+    font-size: 20px;
+    margin: 0;
+    margin-top: 0.8em;
+  }
+  header a h1 svg {
+    width: 20px;
+    height: 15px;
+  }
+  #nav {
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: auto;
+    padding: 0;
+  }
+  main section {
+    width: 95%;
+    margin-bottom: 1em;
+  }
 }
 /*# sourceMappingURL=syle.css.map */

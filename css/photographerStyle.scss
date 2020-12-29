@@ -103,6 +103,41 @@ header
         font-weight: bold;
     }
 }
+#filtre
+{
+    display: flex;
+    h2 
+    {
+        font-weight: bold;
+        font-size: 18px;
+        padding: 0;
+        margin-top: 1.7em;
+    }
+
+    #listFilter
+    {
+        width: 200px;
+        list-style-type: none;
+        color: white;
+       
+        #filterMenu
+        {
+            float: right;
+            margin-top: 0.2em;
+        }
+        .btnFilter
+        {
+            background-color: #901C1C;
+            padding: 1em;
+            cursor: pointer;
+        }
+        .hideBtn
+        {
+            display: none;
+        }
+    }
+}
+
 
 
 .photoContainer

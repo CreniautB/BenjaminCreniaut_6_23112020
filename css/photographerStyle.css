@@ -101,6 +101,40 @@ header {
   font-weight: bold;
 }
 
+#filtre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#filtre h2 {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 0;
+  margin-top: 1.7em;
+}
+
+#filtre #listFilter {
+  width: 200px;
+  list-style-type: none;
+  color: white;
+}
+
+#filtre #listFilter #filterMenu {
+  float: right;
+  margin-top: 0.2em;
+}
+
+#filtre #listFilter .btnFilter {
+  background-color: #901C1C;
+  padding: 1em;
+  cursor: pointer;
+}
+
+#filtre #listFilter .hideBtn {
+  display: none;
+}
+
 .photoContainer {
   margin: 1em;
   width: 350px;
