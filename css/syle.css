@@ -52,6 +52,11 @@ header ul li {
   cursor: pointer;
 }
 
+header ul li:hover {
+  background-color: #901C1C;
+  color: white;
+}
+
 header h1 {
   color: #901C1C;
   font-size: 36px;
@@ -133,6 +138,8 @@ main section ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 main section ul li {
@@ -150,37 +157,31 @@ main section ul li {
   font-weight: bold;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1420px) {
+  #nav {
+    margin-top: 1em !important;
+    margin-bottom: 0.5em !important;
+  }
   main section {
     width: 50%;
   }
-}
-
-@media screen and (max-width: 450px) {
-  header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
   header #titlePhotoHeader {
-    font-size: 14px;
+    font-size: 20px;
     position: absolute;
     right: 1.3em;
     top: 1.3em;
   }
   header a h1 {
-    font-size: 20px;
+    font-size: 30px;
     margin: 0;
     margin-top: 0.8em;
   }
   header a h1 svg {
-    width: 20px;
-    height: 15px;
+    width: 30px;
+    height: 20px;
   }
   #nav {
-    width: 90%;
+    width: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -192,9 +193,34 @@ main section ul li {
     margin: auto;
     padding: 0;
   }
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  header #nav {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header #titlePhotoHeader {
+    font-size: 14px;
+  }
+  header a h1 {
+    font-size: 20px;
+  }
+  header a h1 svg {
+    width: 20px;
+    height: 15px;
+  }
   main section {
-    width: 95%;
-    margin-bottom: 1em;
+    width: 80%;
   }
 }
 /*# sourceMappingURL=syle.css.map */

@@ -3,7 +3,6 @@
 }
 
 .bgform {
-  padding: 2em;
   position: absolute;
   width: 50%;
   left: 45%;
@@ -16,10 +15,15 @@
 }
 
 .bgform #titleCloseForm {
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 1em;
+  margin: auto;
 }
 
 .bgform #titleCloseForm #closeForm {
@@ -27,26 +31,26 @@
 }
 
 .bgform h1 {
-  font-size: 45px;
+  font-size: 35px;
 }
 
-.bgform .formData, .bgform h1 {
-  width: 100%;
+.bgform .formData {
+  width: 80%;
   margin: auto;
 }
 
-.bgform .formData label, .bgform h1 label {
-  font-size: 25px;
+.bgform .formData label {
+  font-size: 20px;
 }
 
-.bgform .formData input, .bgform h1 input {
+.bgform .formData input {
   width: 100%;
-  height: 68px;
+  height: 60px;
   border-radius: 5px;
   border: none;
   margin-top: 0.1em;
   margin-bottom: 0.5em;
-  font-size: 25px;
+  font-size: 20px;
   padding: 0.2em;
 }
 
@@ -56,11 +60,41 @@
   padding: 1em;
   color: white;
   font-size: 18px;
-  font-weight: 700;
   margin-top: 0.5em;
+  border: none;
+  display: block;
+  margin: auto;
 }
 
 .bgform #message {
   height: 110px;
+}
+
+@media screen and (max-width: 1000px) {
+  .bgform {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 100%;
+    margin: 0 !important;
+  }
+  .bgform h1 {
+    font-size: 30px;
+  }
+  .bgform #closeForm svg {
+    width: 20px;
+    height: 20px;
+  }
+  .bgform #message {
+    height: 140px;
+    margin-bottom: 2em;
+  }
+  .bgform #submitBtn {
+    font-weight: 400;
+    padding: 0.4em;
+    height: 35px;
+    width: 170px;
+  }
 }
 /*# sourceMappingURL=form.css.map */

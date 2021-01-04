@@ -2,7 +2,6 @@ $orange : #D3573C;
 $darkOrange : #901C1C;
 $grey : #757575;
 
-
 *
 {
     font-family: 'DM Sans', sans-serif;
@@ -52,6 +51,11 @@ header
             border-radius: 11px;
             cursor: pointer;
         }
+        li:hover
+        {
+            background-color: $darkOrange;
+            color: white;
+        }
     }
 
     h1 
@@ -83,7 +87,6 @@ main
 
         a
         {
-
             text-decoration: none;
 
             div 
@@ -99,7 +102,6 @@ main
                     height: 120%;
                     position: relative;
                     right: 10%;
-                    
                 }
             }
 
@@ -135,6 +137,7 @@ main
             margin: auto;
             margin-top: 0.3em;
             justify-content: center;
+            flex-wrap: wrap;
 
             li
             {
@@ -156,8 +159,13 @@ main
 
 
 
-@media screen and (max-width : 1050px)
+@media screen and (max-width : 1420px)
 {
+    #nav
+    {
+        margin-top: 1em!important;
+        margin-bottom: 0.5em!important;
+    }
     main 
     {
         section
@@ -165,16 +173,12 @@ main
             width: 50%;
         }
     }
-}
-@media screen and (max-width : 450px)
-{
     header 
     {
-        display: flex;
-        flex-wrap: wrap;
+    
         #titlePhotoHeader
         {
-            font-size: 14px;
+            font-size: 20px;
             position: absolute;
             right: 1.3em;
             top: 1.3em;
@@ -183,9 +187,56 @@ main
         {
             h1
             {
-                font-size: 20px;
+                font-size: 30px;
                 margin: 0;
                 margin-top: 0.8em;
+                svg
+                {
+                    width: 30px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+    #nav
+    {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: auto;
+        padding: 0;
+    }
+
+
+    
+}
+@media screen and (max-width : 1000px)
+{
+    header
+    {
+        display: flex;
+        flex-wrap: wrap;
+        #nav
+        {
+            width: 90%;
+        }
+    }
+}
+@media screen and (max-width : 500px)
+{
+    header 
+    {
+        #titlePhotoHeader
+        {
+            font-size: 14px;
+        }
+        a
+        {
+            h1
+            {
+                font-size: 20px;
+
                 svg
                 {
                     width: 20px;
@@ -194,22 +245,12 @@ main
             }
         }
     }
-    #nav
-    {
-        width: 90%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: auto;
-        padding: 0;
-    }
-
     main 
     {
         section
         {
-            width: 95%;
-            margin-bottom: 1em;
+            width: 80%;
         }
     }
+
 }

@@ -1,12 +1,36 @@
 btn = document.querySelector('#filterMenu');
 
+
+let bool = new Boolean
+bool =  false
+
 btn.addEventListener('click', function(e){
 
     btnF = document.querySelectorAll(".hideBtn")
-    btnF.forEach(element => {
+    bntMain = document.querySelector("#btnFilterMain")
+    btnLast = document.querySelector("#titleFilter")
+   
+    if ( bool == false)
+    {
+        bntMain.style.borderBottomLeftRadius = "0"
+        bntMain.style.borderBottomRightRadius = "0"
+        btnLast.style.borderBottomLeftRadius = "5px"
+        btnLast.style.borderBottomRightRadius = "5px"
+        btnF.forEach(element => {
         element.style.display = "block";
+
+    })
+    bool = true}
+    else 
+    {
+        bntMain.style.borderBottomLeftRadius = "5px"
+        bntMain.style.borderBottomRightRadius = "5px"
+        btnF.forEach(element => {
+            element.style.display = "none";
+        })
+        bool = false
     }
-)});
+    });
 
 
 

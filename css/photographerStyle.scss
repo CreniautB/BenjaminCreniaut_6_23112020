@@ -1,7 +1,11 @@
 $orange : #D3573C;
 $darkOrange : #901C1C;
 $grey : #757575;
-
+*
+{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+}
 html, body
 {
     overflow-x: hidden;
@@ -21,6 +25,22 @@ header
 {
     width: 100%;
     margin-left: 1.5em;
+    a
+    {
+        text-decoration: none;
+     
+        h1 
+        {
+            font-size: 45px;
+            color: $darkOrange;
+            letter-spacing: 0.1em;
+            font-weight: 800;
+            svg 
+            {
+                margin-right: 0.1em;
+            }
+        }
+    }
 }
 .photographerCard
 {
@@ -31,6 +51,12 @@ header
     background: #FAFAFA;
     padding: 1.5em;
     
+    #btnContact:hover
+    {
+        background: #DB8876;
+        color: black;
+    }
+
     #photographerPortraitContainer 
     {
         width: 200px;
@@ -45,6 +71,36 @@ header
             position: relative;
             right: 10%;
             
+        }
+    }
+
+    .asidePhotographer
+    {
+        position: fixed;
+        bottom: 0;
+        background-color: #DB8876;
+        right: 20px;
+        min-width: 250px;
+        display: flex;
+        justify-content: space-around;
+        padding: 0.6em;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        * 
+        {
+            font-weight: bold;
+        }
+
+        #asideLike
+        {
+            display: flex;
+           
+            i
+            {
+                margin-top: 0.2em;
+                margin-left: 0.5em;
+            }
         }
     }
 }
@@ -62,15 +118,16 @@ header
     }
     button 
     {
-        background-color: #901C1C;
+        background-color: $darkOrange;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 17px;
         color: white;
         border-radius: 5px;
         border: 0px;
         margin-left: 100px;
         padding: 17px;
-        height: 70px;
+        height: 60px;
+        margin-top: 1em;
     }
 }
 .photographerLocation
@@ -81,6 +138,7 @@ header
 .photographerTagLine
 {
     font-size: 18px;
+    color: $grey;
 }
 .tagList
 {
@@ -111,6 +169,7 @@ header
         font-weight: bold;
         font-size: 18px;
         padding: 0;
+        margin: 1em;
         margin-top: 1.7em;
     }
 
@@ -127,9 +186,15 @@ header
         }
         .btnFilter
         {
-            background-color: #901C1C;
+            background-color: $darkOrange;
             padding: 1em;
             cursor: pointer;
+
+        }
+        #btnFilterMain
+        {
+            border-radius: 5px;
+
         }
         .hideBtn
         {
@@ -137,8 +202,6 @@ header
         }
     }
 }
-
-
 
 .photoContainer
 {
@@ -205,34 +268,90 @@ header
 
 @media screen and (max-width : 1000px)
 {
-    #btnContact
+    #filtre
     {
         display: none;
+    }
+    #btnContact
+    {
+        position: fixed;
+        bottom: 5%;
+        letter-spacing: 1px;
+        height: 30px!important;
+        font-size: 15px;
+        padding: 7px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: 400;
+        width: 200px;
+        margin: 1% auto;
+        left: 0;
+        right: 0;
+        
     }
     .media, .photoContainer
     {
         width: 300px!important;
         margin: auto;
     }
+    .asidePhotographer
+    {
+        display: none!important;
+    }
 }
 @media screen and ( max-width : 650px)
 {
+    header 
+    {
+        margin: 0;
+        margin-top: 1em;
+        #titlePhotoHeader
+        {
+            font-size: 14px;
+        }
+        a
+        {
+            h1
+            {
+                font-size: 30px;
+                margin: 0.9em;
+                margin-bottom: 0.4em;
+
+                svg
+                {
+                    width: 30px;
+                    height: 20px;
+                }
+            }
+        }
+    }
     body 
     {
         margin: 0;
     }
-    .photographerCard
+    #photographerPortraitContainer
     {
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-        margin: 0;
-        padding: 0;
+        width: 130px!important;
+        height: 120px!important;
+    }
+    .photographerName
+    {
+        font-size: 36px!important;
     }
     .tagList
     {
-        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+
+        li
+        {
+            padding: 2.5px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            margin-left: 0;
+        }
     }
+    
     .photographerNameContact
     {
         h1 
@@ -240,13 +359,13 @@ header
             width: 100%;
         }
     }
-    #photographerPortraitContainer
+    .photographerLocation , .photographerTagLine
     {
-        margin: auto;
-        margin-top: 1em;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        font-size: 13px;
+        font-weight: 400;
     }
-
-
     .media, .photoContainer
     {
         width: 300px!important;
@@ -258,4 +377,12 @@ header
         margin-top: 1em;
     }
 
+}
+@media screen and ( max-width : 350px)
+{
+    #photographerPortraitContainer
+    {
+        width: 130px!important;
+        height: 100px!important;
+    }
 }

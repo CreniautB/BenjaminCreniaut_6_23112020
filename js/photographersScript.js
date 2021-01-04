@@ -14,26 +14,39 @@ fetch('jsonSource.json')
         return e.id == photographersId;
       });
 
+      let totalLikes = 0
+      let mediaPhoto = data["media"].filter(function (e) { 
+        return e.photographerId == photographersId;
+     });
+
+
+      mediaPhoto.forEach(element => {
+        totalLikes += element.likes
+      })
+
+
       document.querySelector(".photographerName").innerHTML = photographersByID[0].name;
       document.querySelector(".photographerLocation").innerHTML = photographersByID[0].city+", " + photographersByID[0].country;
       document.querySelector(".photographerTagLine").innerHTML = photographersByID[0].tagline;
       document.querySelector(".photographerPortrait").src = "Photos/PhotographersPhotos/" + photographersByID[0].portrait;
+      document.querySelector(".photographerPortrait").alt = photographersByID[0].name;
       document.querySelector(".nameForm").innerHTML = photographersByID[0].name;
+      document.querySelector("#totalLikes").innerHTML = totalLikes 
+      document.querySelector("#priceSpan").innerHTML = photographersByID[0].price + "€" + " / " + "jour"
   
       for ( let i = 0; i < photographersByID[0]["tags"].length; i++) {
         var tags = document.createElement("LI");
         tags.innerHTML = "# "+photographersByID[0].tags[i];               
         document.querySelector(".tagList").appendChild(tags);
       };
-      let mediaPhoto = data["media"].filter(function (e) { 
-         return e.photographerId == photographersId;
-      });
 
-
+     
 
       /** Gallery Photos */
       var model = document.querySelector(".photoContainer");
       mediaPhoto.forEach(element => {
+
+
 
           var clone = model.cloneNode(true);
           document.querySelector(".gallery").appendChild(clone);
@@ -45,6 +58,8 @@ fetch('jsonSource.json')
           clone.dataset.like = element["likes"]
           clone.dataset.title = element["image"]
           clone.dataset.date = element["date"]
+          
+
 
           /** Incrémentation Likes */
 
@@ -57,8 +72,6 @@ fetch('jsonSource.json')
             else {
               like = false
               clone.querySelector(".likeNb").innerHTML = element["likes"]}})
-        
-
 
           /** Vérifiacation media Si photos Ou Video et ajout à la gallery */
             
@@ -69,11 +82,9 @@ fetch('jsonSource.json')
               title = replaced.split('_').join(' ');
               document.querySelector(".titlePhoto").innerHTML = title
               clone.querySelector(".titlePhoto").innerHTML = title
-
             }
             
           else {
-                        
               preTitle = element.video 
               replaced =  preTitle.substring(0, preTitle.length - 4); 
               title = replaced.split('_').join(' ');         
@@ -98,9 +109,10 @@ fetch('jsonSource.json')
             image.src = "Photos/"+element.photographerId+"/"+element.image;
             clone.querySelector(".media").appendChild(image)
             clone.querySelector(".media").href = "Photos/"+element.photographerId+"/"+element.image;
-          }
+          }  
       },
   )
+
 
 
 
