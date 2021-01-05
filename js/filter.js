@@ -1,9 +1,8 @@
 btn = document.querySelector('#filterMenu');
-
-
 let bool = new Boolean
 bool =  false
 
+/** Ouverture du menu filtre */
 btn.addEventListener('click', function(e){
 
     btnF = document.querySelectorAll(".hideBtn")
@@ -17,25 +16,20 @@ btn.addEventListener('click', function(e){
         btnLast.style.borderBottomLeftRadius = "5px"
         btnLast.style.borderBottomRightRadius = "5px"
         btnF.forEach(element => {
-        element.style.display = "block";
-
-    })
-    bool = true}
+        element.style.display = "block";})
+    bool = true
+    }
     else 
     {
         bntMain.style.borderBottomLeftRadius = "5px"
         bntMain.style.borderBottomRightRadius = "5px"
         btnF.forEach(element => {
-            element.style.display = "none";
-        })
+            element.style.display = "none";})
         bool = false
-    }
-    });
-
+    }});
 
 
 article = document.querySelectorAll('.photoContainer')
-
 array = []
 article.forEach(element => {
     array.push(element)
@@ -80,6 +74,7 @@ buttonTitle.addEventListener('click', function(e)
       }
 })
 
+/** Trier par date */
 buttonDate = document.querySelector('#dateFilter')
 buttonDate.addEventListener('click', function(e)
 {

@@ -2,6 +2,8 @@ const tagLi = document.querySelectorAll(".tag")
 var bool = new Boolean
 bool = false
 
+/** Filtre des cartes photographes en fonction des tags séléctionnés */
+
 tagLi.forEach(tag => {
     tag.addEventListener("click", function(e){
 
@@ -28,8 +30,8 @@ tagLi.forEach(tag => {
             section.forEach(photographer => {
                 photographer.style.display = "block";
             })
+            
             bool = false
         }
-
     })
 });

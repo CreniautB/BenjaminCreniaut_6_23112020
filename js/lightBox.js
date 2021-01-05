@@ -1,9 +1,5 @@
 
-/**
- * @property {HTMLElement} element
- * @property {string[]} images Chemins des images de la lightbox
- * @property {string} url Image actuellement affichée
- **/
+/** Création de la class Lightbox, et du contructeur de l'url  */
 class Lightbox {
 
   static init() {
@@ -14,11 +10,6 @@ class Lightbox {
         new Lightbox(e.currentTarget.getAttribute('href'), gallery)
       }))
   }
-
-  /**
-   * @param {string} url URL de l'image
-   * @param {string[]} images Chemins des images de la lightbox
-   */
   constructor(url, images) {
     this.element = this.buildDOM(url)
     this.images = images
@@ -28,16 +19,11 @@ class Lightbox {
     document.addEventListener('keyup', this.onKeyUp)
   }
 
-  /**
-   * @param {string} url URL de l'image
-   */
-
+  /** Récupération de l'url en vérifiant si l'objet est une photo ou video */
   displayImage (url) {
-    
     this.url = null
     const image = new Image()
     const container = this.element.querySelector('.lightbox__container')
-
 
     if ( url.substr(-4) == ".mp4" )
     {
@@ -59,9 +45,7 @@ class Lightbox {
     } 
   }
 
-  /**
-   * @param {KeyboardEvent} e 
-   */
+ /** Navigation dans la lightbox, Quitter Précedant suivant */
   onKeyUp (e) {
     if (e.key === 'Escape') {
       this.close(e)
@@ -71,10 +55,7 @@ class Lightbox {
       this.next(e)
     }
   }
-  /**
-   * Ferme la ligthbox
-   * @param {MouseEvent|KeyboardEvent} e 
-   */
+ 
   close (e) {
     e.preventDefault()
     this.element.classList.add('fadeOut')
@@ -84,9 +65,6 @@ class Lightbox {
     document.removeEventListener('keyup', this.onKeyUp)
   }
 
-  /**
-   * @param {MouseEvent|KeyboardEvent} e 
-   */
   next (e) {
     e.preventDefault()
     let i = this.images.findIndex(image => image === this.url)
@@ -95,10 +73,7 @@ class Lightbox {
     }
     this.displayImage(this.images[i + 1])
   }
-
-  /**
-   * @param {MouseEvent|KeyboardEvent} e 
-   */
+  
   prev (e) {
     e.preventDefault()
     let i = this.images.findIndex(image => image === this.url)
@@ -108,23 +83,21 @@ class Lightbox {
     this.displayImage(this.images[i - 1])
   }
 
-  /**
-   * @param {string} url URL de l'image
-   * @return {HTMLElement}
-   */
+
+
+  /** Initialisation de la lightbox, Structure html */
   buildDOM(url) {
     const dom = document.createElement('div')
     dom.classList.add('lightbox')
-    dom.innerHTML = `<button class="lightbox__close"><i class="fas fa-times"></i></button>
-        <button class="lightbox__next"><i class="fas fa-angle-right"></i></button>
-        <button class="lightbox__prev"><i class="fas fa-angle-left"></i></button>
+    dom.innerHTML = `<button class="lightbox__close"  aria-label="Fermer la boite image"><i class="fas fa-times"></i></button>
+        <button class="lightbox__next"  aria-label="image suivante" ><i class="fas fa-angle-right"></i></button>
+        <button class="lightbox__prev"  aria-label="image précédente"><i class="fas fa-angle-left"></i></button>
         <div class="lightbox__container"></div>`
     dom.querySelector('.lightbox__close').addEventListener('click', this.close.bind(this))
     dom.querySelector('.lightbox__next').addEventListener('click', this.next.bind(this))
     dom.querySelector('.lightbox__prev').addEventListener('click', this.prev.bind(this))
     return dom
   }
-
 }
 
 Lightbox.init()

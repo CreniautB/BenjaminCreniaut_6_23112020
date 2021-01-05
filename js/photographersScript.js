@@ -7,23 +7,18 @@ fetch('jsonSource.json')
     .then ((data) => {
 
       /** Récupération Id et Proil Photographe */
-
       longID = window.location.search
       photographersId = longID.substr(4);
       let photographersByID = data["photographers"].filter(function (e) {
         return e.id == photographersId;
       });
+      let mediaPhoto = data["media"].filter(function (e) { return e.photographerId == photographersId;});
+
+      
+      /** Ajout dynamique du profil Photographe */
 
       let totalLikes = 0
-      let mediaPhoto = data["media"].filter(function (e) { 
-        return e.photographerId == photographersId;
-     });
-
-
-      mediaPhoto.forEach(element => {
-        totalLikes += element.likes
-      })
-
+      mediaPhoto.forEach(element => {totalLikes += element.likes})
 
       document.querySelector(".photographerName").innerHTML = photographersByID[0].name;
       document.querySelector(".photographerLocation").innerHTML = photographersByID[0].city+", " + photographersByID[0].country;
@@ -45,8 +40,6 @@ fetch('jsonSource.json')
       /** Gallery Photos */
       var model = document.querySelector(".photoContainer");
       mediaPhoto.forEach(element => {
-
-
 
           var clone = model.cloneNode(true);
           document.querySelector(".gallery").appendChild(clone);
@@ -98,6 +91,7 @@ fetch('jsonSource.json')
             let videoSource = document.createElement("SOURCE");
             videoSource.src = "Photos/"+element.photographerId+"/"+element.video;
             video.setAttribute("autoplay", "true")
+            video.setAttribute("aria-label", "ouvrir la video en grand")
             clone.querySelector(".media").appendChild(video)
             video.appendChild(videoSource)
             clone.querySelector(".media").href = "Photos/"+element.photographerId+"/"+element.video;
@@ -107,6 +101,7 @@ fetch('jsonSource.json')
           {
             let image = document.createElement("IMG");
             image.src = "Photos/"+element.photographerId+"/"+element.image;
+            image.setAttribute("aria-label", "ouvrir la photo en grand")
             clone.querySelector(".media").appendChild(image)
             clone.querySelector(".media").href = "Photos/"+element.photographerId+"/"+element.image;
           }  
