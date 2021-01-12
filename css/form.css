@@ -26,8 +26,20 @@
   margin: auto;
 }
 
+.bgform #titleCloseForm h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .bgform #titleCloseForm #closeForm {
   margin-top: 2em;
+  background-color: #DB8876;
+  border: none;
 }
 
 .bgform h1 {
@@ -58,12 +70,14 @@
   background-color: #911C1C;
   border-radius: 5px;
   padding: 1em;
+  width: 150px;
   color: white;
   font-size: 18px;
   margin-top: 0.5em;
   border: none;
   display: block;
-  margin: auto;
+  margin-left: 5.2em;
+  margin-bottom: 3em;
 }
 
 .bgform #message {
@@ -95,6 +109,8 @@
     padding: 0.4em;
     height: 35px;
     width: 170px;
+    margin: auto;
+    margin-bottom: 3em;
   }
 }
 /*# sourceMappingURL=form.css.map */

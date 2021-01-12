@@ -92,8 +92,8 @@ header a h1 svg {
   display: flex;
 }
 
-.photographerCard .asidePhotographer #asideLike i {
-  margin-top: 0.2em;
+.photographerCard .asidePhotographer #asideLike em {
+  margin-top: 0.1em;
   margin-left: 0.5em;
 }
 
@@ -201,6 +201,7 @@ header a h1 svg {
 .photoContainer {
   margin: 1em;
   width: 350px;
+  margin-bottom: 1em !important;
 }
 
 .photoContainer .media {
@@ -255,6 +256,10 @@ header a h1 svg {
       flex-wrap: nowrap;
 }
 
+.photoContainer .subMedia .likePriceMedia .likeHeart {
+  margin-top: 0.15    em;
+}
+
 .photoContainer .subMedia .likePriceMedia * {
   padding-left: 5px;
 }
@@ -306,17 +311,16 @@ header a h1 svg {
   header #titlePhotoHeader {
     font-size: 14px;
   }
-  header a h1 {
-    font-size: 30px;
-    margin: 0.9em;
-    margin-bottom: 0.4em;
-  }
-  header a h1 svg {
-    width: 30px;
-    height: 20px;
+  header a svg {
+    margin: 1.5em;
+    margin-bottom: 0;
+    width: 150px;
   }
   body {
     margin: 0;
+  }
+  .photographerCard {
+    background-color: white;
   }
   #photographerPortraitContainer {
     width: 130px !important;

@@ -1,3 +1,7 @@
+$orange : #D3573C;
+$darkOrange : #901C1C;
+$grey : #757575;
+
 .bgform
 {
     display: none;
@@ -23,10 +27,23 @@
         justify-content: space-between;
         margin-bottom: 1em;
         margin: auto;
+        h1 
+        {
+            display: flex;
+            flex-direction: column;
+        }
         
         #closeForm
         {
             margin-top: 2em;
+            background-color: #DB8876;
+            border: none;
+
+
+            svg
+            {
+
+            }
         }
     }
     h1 {
@@ -60,12 +77,14 @@
         background-color: #911C1C;
         border-radius: 5px;
         padding: 1em;
+        width: 150px;
         color: white;
         font-size: 18px;
         margin-top: 0.5em;
         border: none;
         display: block;
-        margin : auto;        
+        margin-left: 5.2em;
+        margin-bottom: 3em;   
     }
     #message
     {
@@ -92,10 +111,12 @@
 
         #closeForm
         {
+
             svg
             {
                 width: 20px;
                 height: 20px;
+
             }
         }
 
@@ -111,6 +132,8 @@
             padding: 0.4em;
             height: 35px;
             width: 170px;
+            margin: auto;
+            margin-bottom: 3em;
 
         }
     }

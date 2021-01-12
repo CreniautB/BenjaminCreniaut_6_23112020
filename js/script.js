@@ -35,6 +35,16 @@ fetch('jsonSource.json')
             clone.querySelector("a").href = urlData
         })
     })
+    window.addEventListener('scroll', function(e){       
+        if ( window.scrollY != 0 )
+        {
+            document.querySelector("#mainContentLink").style.display = "block";
+        }
+        else
+        {
+            document.querySelector("#mainContentLink").style.display = "none";
+        }
+    })
 
 /** Appel des fichiers javascript */
     

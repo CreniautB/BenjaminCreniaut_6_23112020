@@ -16,7 +16,7 @@ fetch('jsonSource.json')
 
       
       /** Ajout dynamique du profil Photographe */
-
+      let count = 0
       let totalLikes = 0
       mediaPhoto.forEach(element => {totalLikes += element.likes})
 
@@ -26,7 +26,7 @@ fetch('jsonSource.json')
       document.querySelector(".photographerPortrait").src = "Photos/PhotographersPhotos/" + photographersByID[0].portrait;
       document.querySelector(".photographerPortrait").alt = photographersByID[0].name;
       document.querySelector(".nameForm").innerHTML = photographersByID[0].name;
-      document.querySelector("#totalLikes").innerHTML = totalLikes 
+      document.querySelector("#totalLikes").innerHTML = totalLikes
       document.querySelector("#priceSpan").innerHTML = photographersByID[0].price + "€" + " / " + "jour"
   
       for ( let i = 0; i < photographersByID[0]["tags"].length; i++) {
@@ -34,8 +34,6 @@ fetch('jsonSource.json')
         tags.innerHTML = "# "+photographersByID[0].tags[i];               
         document.querySelector(".tagList").appendChild(tags);
       };
-
-     
 
       /** Gallery Photos */
       var model = document.querySelector(".photoContainer");
@@ -58,13 +56,23 @@ fetch('jsonSource.json')
 
           var like = new Boolean
           like = false
+          
           clone.querySelector(".likeHeart").addEventListener("click", function(e){
             if (like == false){
               like = true
-              clone.querySelector(".likeNb").innerHTML = element["likes"]+1}
+              clone.querySelector(".likeNb").innerHTML = element["likes"]+1
+              count += 1      
+              document.querySelector("#totalLikes").innerHTML = totalLikes + count
+              console.log(count)
+
+            }
             else {
               like = false
-              clone.querySelector(".likeNb").innerHTML = element["likes"]}})
+              clone.querySelector(".likeNb").innerHTML = element["likes"]
+              count -= 1
+              document.querySelector("#totalLikes").innerHTML = totalLikes + count
+
+            }})
 
           /** Vérifiacation media Si photos Ou Video et ajout à la gallery */
             

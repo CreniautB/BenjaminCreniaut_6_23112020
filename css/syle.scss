@@ -15,21 +15,32 @@ header
     width: 80%;
     margin: auto;
     height: 150px;
+
+    #mainContentLink
+    {
+        background-color: $orange;
+        border-radius: 5px;
+        color: black;
+        padding: 0.3em;
+        display: none;
+        position: fixed;
+        top: 0;
+        width: 160px;
+        margin-left: -80px;
+        left: 50%;
+        z-index: 2000;
+        text-align: center;
+        font-weight: 700;
+    }
+
     a
     {
         text-decoration: none;
      
-        h1 
-        {
-            font-size: 45px;
-            color: $darkOrange;
-            letter-spacing: 0.1em;
-            font-weight: 800;
-            svg 
-            {
-                margin-right: 0.1em;
-            }
-        }
+       svg 
+       {
+           margin: 1.5em;
+       }
 
     }
     ul 
@@ -162,13 +173,10 @@ main
 
 @media screen and (max-width : 1420px)
 {
-    #nav
-    {
-        margin-top: 1em!important;
-        margin-bottom: 0.5em!important;
-    }
+
     main 
     {
+        margin-top: 2em;
         section
         {
             width: 50%;
@@ -179,34 +187,30 @@ main
     
         #titlePhotoHeader
         {
-            font-size: 20px;
+            font-size: 18px;
             position: absolute;
             right: 1.3em;
-            top: 1.3em;
+            top: 1.9em;
         }
         a
         {
-            h1
+            svg
             {
-                font-size: 30px;
-                margin: 0;
-                margin-top: 0.8em;
-                svg
-                {
-                    width: 30px;
-                    height: 20px;
-                }
+                width: 150px;
+                margin-bottom: 0;
             }
         }
     }
     #nav
     {
-        width: 50%;
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         margin: auto;
         padding: 0;
+        margin-top: 1em!important;
+        margin-bottom: 0.5em!important;
     }
 
 
@@ -216,22 +220,22 @@ main
 {
     header
     {
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
-        #nav
+        nav 
         {
             width: 90%;
+            margin: auto;
+            text-align: center;
         }
+
     }
 }
 @media screen and (max-width : 500px)
 {
     header 
     {
-        #titlePhotoHeader
-        {
-            font-size: 14px;
-        }
         a
         {
             h1

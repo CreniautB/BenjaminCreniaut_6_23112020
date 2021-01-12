@@ -17,6 +17,10 @@
   background-color: white;
 }
 
+.lightbox button:focus {
+  outline-color: white;
+}
+
 .lightbox i {
   color: #901C1C;
   font-size: 30px;

@@ -96,9 +96,9 @@ header
         {
             display: flex;
            
-            i
+            em
             {
-                margin-top: 0.2em;
+                margin-top: 0.1em;
                 margin-left: 0.5em;
             }
         }
@@ -207,7 +207,7 @@ header
 {
     margin: 1em;
     width: 350px;
-    
+    margin-bottom: 1em!important;
     .media 
     {
         display: flex;
@@ -247,6 +247,10 @@ header
         {
             display: flex;
             flex-wrap: nowrap;
+            .likeHeart 
+            {
+                margin-top: 0.15    em;
+            }
             *
             {
             padding-left: 5px;
@@ -311,23 +315,21 @@ header
         }
         a
         {
-            h1
+            svg
             {
-                font-size: 30px;
-                margin: 0.9em;
-                margin-bottom: 0.4em;
-
-                svg
-                {
-                    width: 30px;
-                    height: 20px;
-                }
+                margin: 1.5em;
+                margin-bottom: 0;
+                width: 150px;
             }
         }
     }
     body 
     {
         margin: 0;
+    }
+    .photographerCard
+    {
+        background-color: white;
     }
     #photographerPortraitContainer
     {
